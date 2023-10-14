@@ -4,7 +4,8 @@ This is a complete RISCV core implementing a 5 stage pipeline . It supports RV32
 Note : Install gtkwave and iverilog for simulating it using makefile
 
 # Datapath of Processor
-![RISCV PIPELINE CORE](https://github.com/Mujtabadar537/RISCV-Pipelined-Core/assets/111755551/532e72f6-2db1-4ac5-9956-6d7260382658)
+![RISCV PIPELINE CORE](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/df64bf6b-77c8-43a0-ab46-1da8b100028d)
+
 
 # Output Waveform
 ![Screenshot 2023-10-09 190257](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/c3586fd7-741c-4e9b-a945-ed1fa1c73e7f)
