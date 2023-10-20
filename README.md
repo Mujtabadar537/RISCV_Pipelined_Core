@@ -10,6 +10,10 @@ Note : Install gtkwave and iverilog for simulating it using makefile
 # Output Waveform
 ![Screenshot 2023-10-09 190257](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/c3586fd7-741c-4e9b-a945-ed1fa1c73e7f)
 
+# RTL schematic of core using vivado
+![RISCV_CORE_RTL_SCHEMATIC](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/cbe5e2dc-f640-4022-b81a-5620c44ebf91)
+
+
 
 
 
