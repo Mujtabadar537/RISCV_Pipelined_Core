@@ -96,17 +96,12 @@ InstrF_reg <= InstrF;
 end
 
 
-assign InstrD = InstrF_reg;
-assign pcD = pcD_reg;
-assign PCPlus4D = PCPlus4d_reg;
-
-
-
-
 end
 
 
-
+assign InstrD = InstrF_reg;
+assign pcD = pcD_reg;
+assign PCPlus4D = PCPlus4d_reg;
 
 
 
