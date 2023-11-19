@@ -1,4 +1,4 @@
-# RISCV_Pipelined_Core
+# RISC-V Pipelined Core
 This is a complete RISCV core implementing a 5 stage pipeline in a hierarchical pattern . It supports RV32I instruction set architecture along with a hazard detection unit that take care of hazards by using forwarding . This processor has been implemented using a bottom up approach , every individual unit is desingned separately and then integrated into a single file . A make file has been added with the code to easily simulate it . Just type "make sim" on linux terminal to create the dump.vcd file for viewing the waveform type "make wave " .  
 
 Note : Install gtkwave and iverilog for simulating it using makefile
