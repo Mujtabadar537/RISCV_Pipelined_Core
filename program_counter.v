@@ -7,7 +7,7 @@ output reg [31:0]pc
 
 );
 
-always @(posedge clk)
+always @(posedge clk,posedge reset) 
 begin
 if(reset) begin
 pc <= 32'h00000000;
@@ -23,4 +23,3 @@ end
 
 
 endmodule
-
