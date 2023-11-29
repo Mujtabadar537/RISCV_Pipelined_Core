@@ -3,7 +3,8 @@
 module MA_stage(
 
 input clk,reset,
-input RegWriteM,MemWriteM,
+input RegWriteM,
+input MemWriteM,
 input [1:0]ResultSrcM,
 input [31:0]ALUResultM,WriteDataM,
 input [4:0]RdM,
@@ -88,7 +89,12 @@ assign RdW = Rd_reg;
 assign PCPlus4W = PCPlus4_reg;
 
 
-
+wire _unused_ok = &{1'b0,
+                    RegWriteM,
+                    PCPlus4M,
+                    ResultSrcM,
+                    RDM, // To be fixed
+                    1'b0};
 
 
 
