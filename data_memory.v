@@ -24,6 +24,9 @@ end
 assign RD = (reset) ? 32'h00000000 : memory[A];
 
 
-
+wire _unused_ok = &{1'b0,
+                    A[31:10],
+                    
+                    1'b0};
 
 endmodule
