@@ -30,5 +30,9 @@ verilate:
 	verilator -Wall $(opts) -cc $(source) --exe $(testbench)
 	make -C obj_dir -f V$(top).mk V$(top)
 
-output:
-	./obj_dir/V$(top)	
+wave:
+	./obj_dir/V$(top)
+	gtkwave waveform.vcd
+clean:
+	rm -fr obj_dir waveform.vcd
+	
