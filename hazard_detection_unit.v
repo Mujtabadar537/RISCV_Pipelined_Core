@@ -26,7 +26,12 @@ assign ForwardBE = (reset == 1) ? 2'b00 :
 
 
 
+wire _unused_ok = &{1'b0,
+                    RdW,
+                    1'b0};
+
 
 
 
 endmodule
+
