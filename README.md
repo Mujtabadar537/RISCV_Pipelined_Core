@@ -8,7 +8,8 @@ Note : Install gtkwave and iverilog for simulating it using makefile
 
 
 # Output Waveform
-![RISCV_CORE_OUTPUT_WAVEFORM](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/cf7c5471-6f73-4172-90d2-59829c0caf91)
+![RISCV_WAVEFORM](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/67562bbc-f30b-46c8-be76-2296f699a24f)
+
 
 
 # RTL Schematic of Core
