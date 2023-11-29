@@ -14,7 +14,10 @@ assign ImmExt = (ImmSrc == 2'b01) ? ({{20{In[31]}},In[31:25],In[11:7]}) : {{20{I
 
 
 
-
+wire _unused_ok = &{1'b0,
+                    In[6:0],
+                    In[19:12], // To be fixed
+                    1'b0};
 
 
 endmodule
