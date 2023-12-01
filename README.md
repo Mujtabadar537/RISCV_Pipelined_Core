@@ -1,7 +1,7 @@
 # RISC-V Pipelined Core
-This core implements a 5 stage pipeline . It supports RV32I instruction set architecture along with a hazard detection unit that take care of hazards by using forwarding . This processor has been implemented using a bottom up approach , every individual unit is desingned separately and then integrated into a single file . A make file has been added with the code to easily simulate it using both verilator and iverilog .
+This core implements a 5 stage pipeline . It supports RV32I instruction set architecture along with a hazard detection unit that take care of hazards by using forwarding . This processor has been implemented using a bottom up approach , every individual unit is desingned separately and then integrated into a single file . A make file has been added with the code to easily simulate it using verilator .
 
-Note : icarus verilog or verilator are required for simualtion
+Note : verilator is required for simualtion
 
 # Simulation
 ![Screenshot 2023-12-01 190558](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/174a7fef-4de0-4020-a48b-efd688d0e1db)
