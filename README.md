@@ -6,7 +6,7 @@ Note : icarus verilog or verilator are required for simualtion
 # Simulation
 ![Screenshot 2023-12-01 190558](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/174a7fef-4de0-4020-a48b-efd688d0e1db)
 
-For viewing the wavform 
+For viewing the wavform  
 ![mhmh](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/8f12bb22-3e03-42ff-86d2-bbd82706c264)
 
 
