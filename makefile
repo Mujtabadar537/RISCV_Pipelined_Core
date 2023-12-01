@@ -1,6 +1,6 @@
 #-----------Makefile for iverilog-----------#
 
-#top:= UET_RISCV.v
+#top:= RISCV_Top.v
 #testbench:= testbench_RISCV.v 
 #waveform_file:= dump.vcd
 
