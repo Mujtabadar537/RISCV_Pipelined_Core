@@ -1,5 +1,5 @@
 # RISC-V Pipelined Core
-This core implements a 5 stage pipeline . It supports RV32I instruction set architecture along with a hazard detection unit that take care of hazards by using forwarding . This processor has been implemented using a bottom up approach , every individual unit is desingned separately and then integrated into a single file . A make file has been added with the code to easily simulate it using verilator .
+This core implements classic 5 stage pipeline . It supports RV32IM instruction set architecture along with a hazard detection unit that take care of hazards by using forwarding . This processor has been implemented using a bottom up approach , every individual unit is desingned separately and then integrated into a single file . A make file has been added with the code to easily simulate it using verilator .
 
 Note : verilator is required for simualtion
 
