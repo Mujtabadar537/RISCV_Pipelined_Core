@@ -15,7 +15,8 @@ For viewing the wavform
 
 
 # Output Waveform
-![RISCV_WAVEFORM](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/67562bbc-f30b-46c8-be76-2296f699a24f)
+![RISCV_WAVEFORM](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/3c6f6f7a-954b-4336-b07b-c9d1d9fa11e5)
+
 
 
 
