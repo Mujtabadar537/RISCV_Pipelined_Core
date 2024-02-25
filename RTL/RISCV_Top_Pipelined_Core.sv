@@ -3,6 +3,7 @@
 `include "EXECUTE_STAGE.sv"
 `include "MEMORY_ACCESS_STAGE.sv"
 `include "WRITE_BACK_STAGE.sv"
+`include "FORWARDING_UNIT.sv"
 
 
 
@@ -50,6 +51,11 @@ wire [1:0]ALUOp;
 
 wire Branch_EXECUTE;
 wire Branch_MEMORYACCESS;
+
+wire [4:0]Rs1;
+wire [4:0]Rs2;
+wire [1:0]ForwardA;
+wire [1:0]ForwardB;
 
 
 
@@ -100,6 +106,8 @@ DECODE_STAGE Instruction_Decode(
 .Immout_EXECUTE(Immediate),
 .funct3_EXECUTE(funct3),
 .funct7_bit5_EXECUTE(funct7_bit5),
+.Rs1_EXECUTE(Rs1),
+.Rs2_EXECUTE(Rs2),
 
 .MemtoReg_EXECUTE(MemtoReg_EXECUTE),
 .MemWrite_EXECUTE(MemWrite_EXECUTE),
@@ -137,6 +145,11 @@ EXECUTE_STAGE Instruction_Execute(
 .funct3_EXECUTE(funct3),
 .funct7_bit5_EXECUTE(funct7_bit5),
 .Write_Register_EXECUTE(WriteRegister_EXECUTE),
+
+.ALUResult(ALUResult),
+.WriteData_WRITEBACK(WriteData),
+.ForwardA(ForwardA),
+.ForwardB(ForwardB),
 
 
 
@@ -198,6 +211,7 @@ WRITE_BACK_STAGE Write_Back(
 .ReadData_WRITEBACK(ReadData_DataMemory),
 .Address_WRITEBACK(Address_DataMemory),
 
+
 .RegWrite(RegWrite_WRITEBACK),
 .WriteData(WriteData)
 
@@ -205,11 +219,24 @@ WRITE_BACK_STAGE Write_Back(
 
 
 
+//-------------------------------------------
+
+
+FORWARDING_UNIT Forwarding_Unit(
+
+.Rs1(Rs1),
+.Rs2(Rs2),
+.RegWrite_MEMORYACCESS(RegWrite_MEMORYACCESS),
+.RegWrite_WRITEBACK(RegWrite_WRITEBACK),
+.WriteRegister_MEMORYACCESS(WriteRegister_EXECUTE),
+.WriteRegister_WRITEBACK(WriteRegister_MEMORYACCESS),
+
+.ForwardA(ForwardA),
+.ForwardB(ForwardB)
+
+
+);
+
 
 
 endmodule
-
-
-
-
-
