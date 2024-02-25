@@ -1,9 +1,5 @@
-/* verilator lint_off MODDUP */
-`include "Add.sv"
-`include "mux.sv"
 `include "ALU.sv"
 `include "ALU_Control.sv"
-/* verilator lint_on MODDUP */
 
 
 module EXECUTE_STAGE(
@@ -27,6 +23,14 @@ input [2:0]funct3_EXECUTE,
 input funct7_bit5_EXECUTE,
 input [4:0]Write_Register_EXECUTE,
 
+//forwarding
+/* verilator lint_off UNUSED */
+input [31:0]ALUResult,
+/* verilator lint_on UNUSED */
+input [31:0]WriteData_WRITEBACK,
+input [1:0]ForwardA,
+input [1:0]ForwardB,
+
 
 
 output [31:0]PCTarget_MEMORYACCESS,
@@ -47,12 +51,15 @@ output Branch_MEMORYACCESS
 
 
 //interim wires
-wire [31:0]operand2_wire;
 wire [3:0]ALUControl_wire;
 wire zero_wire;
 wire [31:0]ALUResult_wire;
 wire [31:0]PCTarget_wire;
-
+wire [31:0]ALU_operand1_wire;
+/* verilator lint_off UNUSED */
+wire [31:0]ALU_operand2_wire;
+/* verilator lint_on UNUSED */
+wire [31:0]Mux_wire;
 
 
 
@@ -74,8 +81,8 @@ Add SUM(
 
 ALU Arithmetic_Logic_Unit(
 
-.operand1_i(ReadData1_EXECUTE),
-.operand2_i(operand2_wire),
+.operand1_i(ALU_operand1_wire),
+.operand2_i(ALU_operand1_wire),
 .ALU_Control_i(ALUControl_wire),
 
 .ALUResult_o(ALUResult_wire),
@@ -90,13 +97,13 @@ ALU Arithmetic_Logic_Unit(
 
 
 
-mux Branch_mux(
+mux ALU_Operand2_mux(
 
-.in1_i(ReadData2_EXECUTE),
+.in1_i(Mux_wire),
 .in2_i(Immout_EXECUTE),
 .sel_i(ALUSrc_EXECUTE),
 
-.out_o(operand2_wire)
+.out_o(ALU_operand2_wire)
 
 
 );
@@ -118,6 +125,35 @@ ALU_Control ALUControl(
 );
 
 //------------------------------------
+
+
+Forwarding_Mux Forwarding_mux1(
+
+.in1(ReadData1_EXECUTE),
+.in2(ALUResult_MEMORYACCESS),
+.in3(WriteData_WRITEBACK),
+
+.sel(ForwardA),
+
+.out(ALU_operand1_wire)
+
+);
+
+
+//------------------------------------
+
+
+Forwarding_Mux Forwarding_mux2(
+
+.in1(ReadData2_EXECUTE),
+.in2(ALUResult_MEMORYACCESS),
+.in3(WriteData_WRITEBACK),
+
+.sel(ForwardB),
+
+.out(Mux_wire)
+
+);
 
 
 
@@ -199,28 +235,3 @@ wire _unused_ok = &{1'b0,
 
 
 endmodule
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
