@@ -8,10 +8,11 @@
 ![pipelined_waveform](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/a278f987-60ad-4333-9ac2-7b3c15579af7) 
 
 ## Simulation of Design
+```python
 * Verilator is required for simulaton .
 * If you don't have linux machine  for using verilator any virtual machine or WSL can be used .
 * After cloning the repository cd to RTL directory .
 * Type "make verilate" on terminal to create object directory of verilator .
 * Now type "make wave" to view the waveform (gtkwave is required) .
 * "make clean" can be used to delete the object directory and vcd files .
-
+```
