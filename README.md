@@ -13,7 +13,7 @@ To create object directory of verilator type
 ```python
 make verilate
 ```
-For viewing waveform gtkwave is required type
+For viewing waveform gtkwave is required , if you already have gtkwave type
 ```python
 make wave
 ```
