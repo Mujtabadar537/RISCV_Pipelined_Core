@@ -10,7 +10,7 @@
 ## Simulation of Design
 For cloning repository
 ```python
-https://github.com/Mujtabadar537/RISCV_Pipelined_Core.git
+git clone https://github.com/Mujtabadar537/RISCV_Pipelined_Core.git
 ```
 Verilator is required for simulaton . If you don't have linux machine  for using verilator any virtual machine or WSL can be used . After cloning the repository cd to RTL directory .
 To create object directory of verilator type
