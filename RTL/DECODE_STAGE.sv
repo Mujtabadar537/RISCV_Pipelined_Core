@@ -25,6 +25,10 @@ output [31:0]Immout_EXECUTE,
 output [2:0]funct3_EXECUTE,
 output funct7_bit5_EXECUTE,
 
+//forwarding
+output [4:0]Rs1_EXECUTE,
+output [4:0]Rs2_EXECUTE,
+
 output MemtoReg_EXECUTE,
 output MemWrite_EXECUTE,
 output MemRead_EXECUTE,
@@ -130,6 +134,9 @@ logic [31:0]Immout_reg;
 logic [2:0]funct3_reg;
 logic funct7_bit5_reg;
 
+//for forwarding unit
+logic [4:0]Rs1_reg;
+logic [4:0]Rs2_reg;
 
 
 always_ff @(posedge clk_i) begin
@@ -148,7 +155,10 @@ if(reset_i) begin
 	ReadData2_reg <= 32'h00000000;
 	Immout_reg <= 32'h00000000;
 	funct3_reg <= 3'b000;
-	funct7_bit5_reg <= 1'b0; 
+	funct7_bit5_reg <= 1'b0;
+	Rs1_reg <= 5'b00000;
+	Rs2_reg <= 5'b00000;
+	 
 end
 
 
@@ -167,7 +177,9 @@ else begin
 	ReadData2_reg <= ReadData2_wire;
 	Immout_reg <= Immout_wire;
 	funct3_reg <= instruction_DECODE[14:12];
-	funct7_bit5_reg <= instruction_DECODE[30]; 
+	funct7_bit5_reg <= instruction_DECODE[30];
+	Rs1_reg <= instruction_DECODE[19:15];
+	Rs2_reg <= instruction_DECODE[24:20]; 
 end
 
 
@@ -191,6 +203,8 @@ assign ReadData2_EXECUTE = ReadData2_reg;
 assign Immout_EXECUTE = Immout_reg;
 assign funct3_EXECUTE = funct3_reg;
 assign funct7_bit5_EXECUTE = funct7_bit5_reg;
+assign Rs1_EXECUTE = Rs1_reg;
+assign Rs2_EXECUTE = Rs2_reg;
 
 
 wire _unused_ok = &{1'b0,
@@ -199,6 +213,5 @@ wire _unused_ok = &{1'b0,
 
 
 endmodule
-
 
 
