@@ -9,8 +9,9 @@
 
 # Simulation of Design
 * Verilator is required for simulaton .
-* If you don't have linux machine any virtual machine or WSL can be used .
+* If you don't have linux machine  for using verilator any virtual machine or WSL can be used .
 * After cloning the repository cd to RTL directory .
 * Type "make verilate" on terminal to create object directory of verilator .
 * Now type "make wave" to view the waveform (gtkwave is required) .
+* "make clean" can be used to delete the object directory and vcd files .
 
