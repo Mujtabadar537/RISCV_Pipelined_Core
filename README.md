@@ -5,5 +5,8 @@
 ![Forwarding_Unit](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/3995edf1-fbe3-4c6d-a3b1-1b2d1bb77f19)
 
 # Simulation Waveform
-![pipelined_waveform](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/a278f987-60ad-4333-9ac2-7b3c15579af7)
+![pipelined_waveform](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/a278f987-60ad-4333-9ac2-7b3c15579af7) 
+
+# Simulation of Design
+*Verilator is required for simulaton .
 
