@@ -8,5 +8,5 @@
 ![pipelined_waveform](https://github.com/Mujtabadar537/RISCV_Pipelined_Core/assets/111755551/a278f987-60ad-4333-9ac2-7b3c15579af7) 
 
 # Simulation of Design
-*Verilator is required for simulaton .
+* Verilator is required for simulaton .
 
