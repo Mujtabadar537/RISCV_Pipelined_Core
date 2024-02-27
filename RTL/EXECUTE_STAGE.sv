@@ -1,5 +1,8 @@
-`include "ALU.sv"
+`include "Forwarding_Mux.sv"
 `include "ALU_Control.sv"
+`include "ALU.sv"
+
+
 
 
 module EXECUTE_STAGE(
@@ -24,9 +27,6 @@ input funct7_bit5_EXECUTE,
 input [4:0]Write_Register_EXECUTE,
 
 //forwarding
-/* verilator lint_off UNUSED */
-input [31:0]ALUResult,
-/* verilator lint_on UNUSED */
 input [31:0]WriteData_WRITEBACK,
 input [1:0]ForwardA,
 input [1:0]ForwardB,
@@ -82,7 +82,7 @@ Add SUM(
 ALU Arithmetic_Logic_Unit(
 
 .operand1_i(ALU_operand1_wire),
-.operand2_i(ALU_operand1_wire),
+.operand2_i(ALU_operand2_wire),
 .ALU_Control_i(ALUControl_wire),
 
 .ALUResult_o(ALUResult_wire),
