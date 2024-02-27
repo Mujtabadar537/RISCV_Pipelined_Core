@@ -93,7 +93,7 @@ DECODE_STAGE Instruction_Decode(
 .instruction_DECODE(instruction),
 .pc_DECODE(pc_DECODE),
 
-//signals from other stages
+
 .Write_Register(WriteRegister_MEMORYACCESS),
 .RegWrite(RegWrite_WRITEBACK),
 .Write_data(WriteData),
@@ -146,7 +146,7 @@ EXECUTE_STAGE Instruction_Execute(
 .funct7_bit5_EXECUTE(funct7_bit5),
 .Write_Register_EXECUTE(WriteRegister_EXECUTE),
 
-.ALUResult(ALUResult),
+
 .WriteData_WRITEBACK(WriteData),
 .ForwardA(ForwardA),
 .ForwardB(ForwardB),
@@ -236,6 +236,7 @@ FORWARDING_UNIT Forwarding_Unit(
 
 
 );
+
 
 
 
