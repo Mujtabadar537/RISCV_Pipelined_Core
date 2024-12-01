@@ -63,7 +63,7 @@ Data_Memory data_memory(
 
 
 .clk_i(clk_i),
-.reset_i(reset_i),
+//.reset_i(reset_i),
 .MemWrite_i(MemWrite_MEMORYACCESS),
 .MemRead_i(MemRead_MEMORYACCESS),
 .Address_i(Address_wire),
